@@ -6,11 +6,12 @@
    ('\t' or ' ').  
    Zero terminators are not printable (therefore false) */
 int space_char(char c);
-
+    
 /* Return true (non-zero) if c is a non-whitespace 
    character (not tab or space).  
    Zero terminators are not printable (therefore false) */ 
 int non_space_char(char c);
+  
 
 /* Returns a pointer to the first character of the next 
    space-separated word in zero-terminated str.  Return a zero pointer if 
@@ -28,7 +29,7 @@ int count_words(char *str);
 char *copy_str(char *inStr, short len);
 
 /* Returns a freshly allocated zero-terminated vector of freshly allocated 
-   space-separated tokens from zero-terminated str.
+   space-separated tokens frxom zero-terminated str.
 
    For example, tokenize("hello world string") would result in:
      tokens[0] = "hello"

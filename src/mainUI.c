@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "tokenizer.h"
+
+void goto_tokens(char *input)
+{
+  char tokinput[1000];
+  fputs("Please provide a sentence you would like to tokenize. \n",stdout);
+  putchar('$');
+  fgets(tokinput, 1000,stdin);
+  char **tokens = tokenize(tokinput);
+  print_tokens(tokens);
+}
+int main() 
+{
+  char input[1000]; //set a limit on how big the input can be
+  
+  puts("Welcome!");
+
+  while (1) { // Infinite while loop
+
+
+    fputs("Please enter 't' to Tokenize, and 'q' to Quit.\n",stdout);
+    putchar('$');
+    fgets(input,1000,stdin);
+
+    if(*input =='t'){
+      goto_tokens(input);
+  }
+    else if(*input =='q'){
+      puts("Thank you, bye!");
+      // terminates
+      goto done;
+    }
+    else{
+      printf("Invalid command please try again:)\n",input);
+    }
+  }
+ done:
+  return 0;
+}
