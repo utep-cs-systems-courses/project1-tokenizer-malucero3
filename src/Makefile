@@ -1,5 +1,5 @@
 # For convenience, define variables $(OBJS) to list files
-OBJS= mainUI.o tokenizer.o
+OBJS= mainUI.o tokenizer.o history.o
 
 # compile flags. -g for debug, -03 for optimization
 CFLAGS = -g -O3
@@ -7,6 +7,10 @@ CFLAGS = -g -O3
 #first target is built by default
 all: tokens
 
+# Include file dependencies
+tokenizer.o: tokenizer.h
+uimain.o: tokenizer.h
+history.o: history.h
 # $@= target, $^=prerequisites
 tokens: $(OBJS)
 	cc -o tokens $(CFLAGS) $(OBJS)
